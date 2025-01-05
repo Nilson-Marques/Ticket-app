@@ -10,7 +10,6 @@ const PriorityDisplay = () => {
         <FontAwesomeIcon icon={faFire} className="text-red-400"/>
         <FontAwesomeIcon icon={faFire} className="text-red-400"/>
         <FontAwesomeIcon icon={faFire} className="text-red-400"/>
-      
     </div>
   )
 }
