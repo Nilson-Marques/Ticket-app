@@ -5,7 +5,7 @@ const StatusDisplay = ({status}) => {
   const getColor = (status) => {
     let color = "bg-slate-700"
     
-    switch (status.toLowerCase()) {
+    switch (status) {
       case "done" : 
         color = "bg-green-200";
         return color;

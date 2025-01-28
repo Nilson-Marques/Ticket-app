@@ -8,7 +8,7 @@ const TicketForm = () => {
   const  router = useRouter()
 
 
-    const handleChange =  (e) =>{
+    const handleChange =  (e) => {
         const value = e.target.value;
         const name = e.target.name;
 
@@ -36,7 +36,7 @@ const TicketForm = () => {
 
 
   
-    const startTicketData = {
+    const startingTicketData = {
         title:"",
         description:"",
         priority: 1,
@@ -46,7 +46,7 @@ const TicketForm = () => {
 
     };
 
-    const [formData, setFormData] = useState (startTicketData)
+    const [formData, setFormData] = useState (startingTicketData)
 
     return (
     <div className="flex justify-center">
