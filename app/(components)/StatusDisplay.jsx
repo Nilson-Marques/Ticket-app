@@ -3,7 +3,8 @@
 const StatusDisplay = ({status}) => {
 
   const getColor = (status) => {
-    let color = "bg-slate-700"
+   
+    let color = "bg-slate-700";
     
     switch (status) {
       case "done" : 
