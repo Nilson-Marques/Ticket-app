@@ -4,7 +4,8 @@ import { useRouter } from "next/navigation"
 import React, { useState} from "react";
 
 
-const TicketForm = () => {
+const TicketForm = ({ticket}) => {
+  const EDITMODE = ticket._id === "new" ? false : true 
   const  router = useRouter()
 
 
@@ -46,12 +47,24 @@ const TicketForm = () => {
 
     };
 
+if(EDITMODE) {
+  startingTicketData["title"] = ticket.title
+  startingTicketData["description"] = ticket.description
+  startingTicketData["priority"] = ticket.priority
+  startingTicketData["progress"] = ticket.progress
+  startingTicketData["status"] = ticket.status
+  startingTicketData["category"] = ticket.category
+}
+
+
+
+
     const [formData, setFormData] = useState (startingTicketData)
 
     return (
     <div className="flex justify-center">
         <form className="flex flex-col gap-3 w-1/2" method="post"  onSubmit={handleSubmit}>
-            <h3>Create your Ticket</h3>
+            <h3>{ EDITMODE ? "Update your Ticket":"Create your Ticket"}</h3>
             <label>Title</label>
             <input id="title" name="title" type="text" onChange={handleChange} require={true} value={formData.title}/>
 
@@ -117,7 +130,7 @@ const TicketForm = () => {
             <option value="started"> Started</option>
             <option value="done"> Done</option>
         </select>
-        <input type="submit" className="btn max-w-xs" value="Create Ticket"/>
+        <input type="submit" className="btn max-w-xs" value={ EDITMODE ? "Update your Ticket": "Create your Ticket"}/>
       </form>
     </div>
   )
