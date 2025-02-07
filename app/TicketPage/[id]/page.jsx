@@ -1,10 +1,11 @@
 import TicketForm from "@/app/(components)/TicketForm";
 
+
 const getTicketById = async (id) => {
- 
-      const res = await fetch (`http://localhost:3000/api/tickes/${id}`, {
-        cache: "no-store"
-      })
+    
+      const res = await fetch(`http://localhost:3000/api/tickes/${id}`, {
+        cache: "no-store",
+      });
 
       if (!res.ok) {
         throw new Error("Failed to get ticket.")
@@ -13,7 +14,7 @@ const getTicketById = async (id) => {
     }
 
 const TicketPage = async ({params}) => {
-  const EDITMODE = params.id === "new" ? false : true
+  const EDITMODE = params.id === "new" ? false : true;
   let upDateTicketData = {};
 
   if (EDITMODE) {
