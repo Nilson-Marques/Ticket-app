@@ -3,6 +3,7 @@ import DeleteBlock from "./DeleteBlock"
 import PriorityDisplay from "./PriorityDisplay"
 import ProgressDisplay from "./ProgressDisplay"
 import StatusDisplay from "./StatusDisplay"
+import Ticket from "../(models)/Ticket"
 
 
 const TicketCard = ({ticket}) => {
@@ -35,7 +36,7 @@ const formatTimestamp = (timestamp) => {
         </div>
 
 
-        <Link href={`/TicketPage/${ticket._id}`} style={{display:"contents"}}>
+        <Link href={`/TicketPage/${Ticket._id}`} style={{display:"contents"}}>
           <h4>{ticket.title}</h4>
           <hr className="h-px border-0 bg-page mb-2"/>
             <p className="whitespace-pre-wrap">{ticket.description}</p>
