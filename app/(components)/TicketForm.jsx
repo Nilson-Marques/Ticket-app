@@ -21,6 +21,18 @@ const TicketForm = ({ticket}) => {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
+      if (EDITMODE) {
+        const res = await fetch(`/api/Tickets/${ticket._id}`, {
+          method: "PUT",
+          body: JSON.stringify({formData}),
+          "content-type":"aplication/json"
+          })
+    
+          if(!res.ok){
+            throw new Error("failed to Update Ticket.")
+          }
+    
+      } else {
       const res = await fetch("/api/Tickets", {
       method: "POST",
       body: JSON.stringify({formData}),
@@ -35,7 +47,7 @@ const TicketForm = ({ticket}) => {
       router.push("/")
     }
 
-
+  }
   
     const startingTicketData = {
         title:"",
