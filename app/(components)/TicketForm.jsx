@@ -5,8 +5,9 @@ import React, { useState} from "react";
 
 
 const TicketForm = ({ticket}) => {
+
   const EDITMODE = ticket._id === "new" ? false : true 
-  const  router = useRouter()
+  const  router = useRouter();
 
 
     const handleChange =  (e) => {
@@ -21,12 +22,13 @@ const TicketForm = ({ticket}) => {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
+      
       if (EDITMODE) {
         const res = await fetch(`/api/Tickets/${ticket._id}`, {
           method: "PUT",
           body: JSON.stringify({formData}),
           "content-type":"aplication/json"
-          })
+          });
     
           if(!res.ok){
             throw new Error("failed to Update Ticket.")
@@ -37,15 +39,16 @@ const TicketForm = ({ticket}) => {
       method: "POST",
       body: JSON.stringify({formData}),
       "content-type":"aplication/json"
-      })
+      });
 
       if(!res.ok){
         throw new Error("failed to create Ticket.")
       }
 
-      router.refresh()
-      router.push("/")
+      
     }
+    router.refresh();
+    router.push("/");
 
   }
   
