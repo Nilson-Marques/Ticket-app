@@ -88,10 +88,10 @@ if(EDITMODE) {
             rows="5"/>
 
             <label>catagory</label>
-            <select name="catagory" value={formData.category} onChange={handleChange}>
+            <select name="category" value={formData.category} onChange={handleChange}>
               <option value="hardware Problem">Hardware problem</option>                
-              <option value="hardware Problem">Software problem</option>
-              <option value="hardware Problem">Project</option>
+              <option value="Software Problem">Software problem</option>
+              <option value="Project">Project</option>
           </select>
 
       <label>priority</label>
