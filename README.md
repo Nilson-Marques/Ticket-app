@@ -1,4 +1,4 @@
-Special thaks to freeCodeCamp.org and  ‪@ClarityCoders (https://github.com/ClarityCoders/Ticket-Tutorial-App)  with this amazing tutorial!!
+Special thaks to freeCodeCamp.org (https://github.com/freeCodeCamp) and  ‪@ClarityCoders (https://github.com/ClarityCoders/Ticket-Tutorial-App)  with this amazing tutorial!!
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
